@@ -13,5 +13,9 @@ The interface allows selection of a model, and other parameters for the simulati
 ![Main Interface](/data/inteface_boltmann.png?)
 
 Run simulation button runs the simulations and shows the following plot(s).
-# Agent Grid after the simulation
-![alt text](data/grid.png?raw=true)
+## Agent Grid after the simulation
+![Agent Grid](data/grid.png?raw=true)
+
+## Gini Value over Sim-Ticks
+![Agent Grid](data/gini.png?raw=true)
+
