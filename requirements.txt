@@ -1,0 +1,4 @@
+Mesa==1.2.1
+streamlit==1.20.0
+plotly==5.13.1
+matplotlib==3.7.1
