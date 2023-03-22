@@ -3,7 +3,7 @@
 Steps to run:
 
 - (From a virtual environment) Install all requirements using: `pip install -r requirements.txt`
-- From the project folder run `streamlit run app.py`
+- From the project folder run: `streamlit run app.py`
 
 The app will automatically open in your local browser. Here is a preview of the app: 
 
