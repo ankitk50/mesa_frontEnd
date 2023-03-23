@@ -4,6 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 import plotly.express as px
+import altair as alt
+import pandas as pd
 st.title('Mesa StreamLit Interface')
 
 col1,col2,col3  = st.columns(3)
@@ -16,7 +18,8 @@ model = MoneyModel(num_agents, height, width)
 
 
 status_text = st.empty()
-if st.button('Run Simulation'):
+run = st.button('Run Simulation')
+if run :
     tick = time.time()
     for i in range(num_ticks):
         model.step()
@@ -31,7 +34,23 @@ if st.button('Run Simulation'):
     st.subheader('Agent Grid')
     fig = px.imshow(agent_counts,labels={'color':'Agent Count'})
     st.plotly_chart(fig)
-    st.subheader('Gini value over sim ticks')
+    st.subheader('Gini value over sim ticks (Plotly)')
     chart = st.line_chart(model.datacollector.model_vars['Gini'])
+
+    st.subheader('Gini value over sim ticks (Altair)')
+    gini_values = model.datacollector.model_vars['Gini']
+    index_x= [i+1 for i in range(len(gini_values))]
+    # if st.checkbox('Show Raw Gini data'):
+    df = pd.DataFrame({'y':gini_values,'x':index_x})
+    st.altair_chart(alt.Chart(df).mark_line(
+    point=alt.OverlayMarkDef(color="red")
+    ).encode(
+        x='x',
+        y='y'
+    ),use_container_width=True)
+    with st.expander('show raw data', expanded=False):
+        st.table(df['y'])
+
+        # alt.Chart(df).mark_line().encode()
 
 
