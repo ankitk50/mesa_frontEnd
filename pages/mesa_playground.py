@@ -6,7 +6,7 @@ from io import StringIO
 import pandas as pd
 
 st.title('Mesa Playground')
-uploaded_file = st.file_uploader('Upload simulation result file (output/output)',type=['.json','.csv','.yml'])
+uploaded_file = st.file_uploader('Upload simulation result file (output/output_data.json)',type=['.json'])
 
 plot_gen = st.button('Generate Plot')
 
