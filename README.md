@@ -16,6 +16,9 @@ Run simulation button runs the simulations and shows the following plot(s).
 ## Agent Grid after the simulation
 ![Agent Grid](data/grid.png?raw=true)
 
-## Gini Value over Sim-Ticks
+## Gini Value over Sim-Ticks (using Plotly)
 ![Agent Grid](data/gini.png?raw=true)
+
+## Gini Value over Sim-Ticks (using Altair)
+![Agent Grid](data/altair_line.png?raw=true)
 
