@@ -6,9 +6,10 @@ import time
 import plotly.express as px
 import altair as alt
 import pandas as pd
+import yaml
+import json
 st.title('Mesa StreamLit Interface')
 
-col1,col2,col3  = st.columns(3)
 model = st.selectbox('Select Model',['Boltzman Wealth Model'])
 num_ticks = st.slider('Select number of Simulation Runs',min_value=1,max_value=100,value=50)
 num_agents= st.slider('Select number of Agents',min_value=1,max_value=100,value=50)
@@ -17,8 +18,14 @@ width = st.slider('Select Grid Width',min_value=10,max_value=100,step=10,value=2
 model = MoneyModel(num_agents, height, width)
 
 
+col1,col2,col3  = st.columns(3)
 status_text = st.empty()
-run = st.button('Run Simulation')
+with col1:
+    run = st.button('Run Simulation')
+with col2:
+    save = st.checkbox('Save output')
+
+
 if run :
     tick = time.time()
     for i in range(num_ticks):
@@ -50,6 +57,17 @@ if run :
     ),use_container_width=True)
     with st.expander('show raw data', expanded=False):
         st.table(df['y'])
+
+    # yaml_dump_dict= {'agent_count':agent_counts.tolist(), 'gini':gini_values}
+    yaml_dump_dict= {'x':index_x,'y':gini_values}
+    if save:
+        
+        with open('output/output_data.json', 'w') as fp:
+            json.dump(yaml_dump_dict, fp)
+
+        with open('output/output_data.yml', 'w') as outfile:
+            yaml.dump(yaml_dump_dict, outfile, default_flow_style=False)
+    
 
         # alt.Chart(df).mark_line().encode()
 
