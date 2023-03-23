@@ -21,6 +21,6 @@ if uploaded_file is not None and plot_gen:
 
     with st.expander('show raw data', expanded=False):
         st.table(df['y'])
-else:
+if plot_gen and not uploaded_file:
     st.info('Upload file and the click generate plots')
 
