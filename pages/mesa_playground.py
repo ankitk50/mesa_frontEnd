@@ -1,8 +1,5 @@
 import streamlit as st
-import yaml
-import json
 import altair as alt
-from io import StringIO
 import pandas as pd
 
 st.title('Mesa Playground')

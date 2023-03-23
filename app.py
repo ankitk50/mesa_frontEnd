@@ -59,16 +59,10 @@ if run :
         st.table(df['y'])
 
     # yaml_dump_dict= {'agent_count':agent_counts.tolist(), 'gini':gini_values}
-    yaml_dump_dict= {'x':index_x,'y':gini_values}
+    json_dump_dict= {'x':index_x,'y':gini_values}
     if save:
-        
         with open('output/output_data.json', 'w') as fp:
-            json.dump(yaml_dump_dict, fp)
+            json.dump(json_dump_dict, fp)
 
-        with open('output/output_data.yml', 'w') as outfile:
-            yaml.dump(yaml_dump_dict, outfile, default_flow_style=False)
-    
-
-        # alt.Chart(df).mark_line().encode()
 
 
