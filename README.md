@@ -22,3 +22,7 @@ Run simulation button runs the simulations and shows the following plot(s).
 ## Gini Value over Sim-Ticks (using Altair)
 ![Agent Grid](data/altair_line.png?raw=true)
 
+## Load output of a compelted simulation (using Mesa Playground)
+Browse ouput/output_data.json to regenerate all the plots w/o running the simulation.
+
+![Agent Grid](data/playground.png?raw=true)
