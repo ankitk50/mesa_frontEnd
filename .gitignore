@@ -1,4 +1,6 @@
 **__pycache__**
 **.venv/**
 **.venv_panel/**
+**.venv_dash/**
 **.DS_**
+.ipynb_checkpoints/**
