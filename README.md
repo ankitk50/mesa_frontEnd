@@ -23,12 +23,12 @@ Run simulation button runs the simulations and shows the following plot(s).
 ![Agent Grid](data/altair_line.png?raw=true)
 
 ### Load output of a compelted simulation (using Mesa Playground)
-Browse ouput/output_data.json to regenerate all the plots w/o running the simulation.
+Browse *ouput/output_data.json* to regenerate all the plots w/o running the simulation.
 
 ![Agent Grid](data/playground.png?raw=true)
 
 ## Panel Jupyter Notebook Example
-The Panel interface allows selection of a model, and other parameters for the simulation inside a Jupyter notebook.
+The Panel interface allows selection of a model, and other parameters for the simulation inside a Jupyter notebook. Checkout the notebook **Panel_Mesa_Example.ipynb** for more information.
 
 ![Agent Grid](data/PanelJupyter.png?raw=true)
 
